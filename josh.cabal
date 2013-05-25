@@ -1,0 +1,62 @@
+Name:                josh
+Version:             0.1
+License:             BSD3
+License-File:        COPYING
+Author:         Boris Sukholitko <boriss@gmail.com>
+Copyright:      Boris Sukholitko <boriss@gmail.com>
+Maintainer:     Boris Sukholitko <boriss@gmail.com>
+Cabal-version:       >= 1.10
+Build-type:          Simple
+Synopsis:            JavaScript linker for GHC JS backend
+Description:    It has not use until GHC patches are merged
+
+Extra-Source-Files:
+        t/progs/CString.out
+        t/progs/Callback.hs
+        t/progs/Callback.out
+        t/progs/Error.hs
+        t/progs/MVar.hs
+        t/progs/Fac.hs
+        t/progs/Fib.out
+        t/progs/Fib.js
+        t/progs/Server.out
+        t/progs/Server.hs
+        t/progs/InpOut.js
+        t/progs/Fac.js
+        t/progs/CString.hs
+        t/progs/Error.err
+        t/progs/CString.js
+        t/progs/MVar.js
+        t/progs/Server.sh
+        t/progs/MVar.out
+        t/progs/InpOut.hs
+        t/progs/Fib.hs
+        t/progs/Simplest.hs
+        t/progs/InpOut.out
+        t/progs/Server.js
+        t/progs/Callback.js
+        t/progs/Fac.out
+        etc/visualizer.js
+        etc/ptr.js
+        etc/style.css
+        etc/frameset.html
+        etc/bootstrap.cfg
+        etc/trace.js
+
+executable josh
+    Build-Depends: base (< 5), bytestring, attoparsec, aeson, vector, containers, directory
+                        , transformers, configurator, process, text, filepath, executable-path
+                        , unix
+    other-modules: Josh.Bootstrap, Josh.Visualizer
+    ghc-options: -Wall
+    main-is: Josh.hs
+    Default-Language: Haskell2010
+
+test-suite Test
+    type:            exitcode-stdio-1.0
+    build-depends:   base, test-simple, process, directory, transformers
+    Default-Language: Haskell2010
+    ghc-options:     -Wall
+    hs-source-dirs:  t
+    main-is:         Test.hs
+

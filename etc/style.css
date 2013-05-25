@@ -1,0 +1,16 @@
+:target:before {
+  font:           70% Arial,"Nimbus Sans L",sans-serif !important;
+  content:        "\25ba";  /* ► */
+  color:          red;
+  background:     gold;
+  border:         solid thin;
+  padding-left:   1px;
+  display:        inline-block;
+  margin-right:   0.13em;
+  vertical-align: 20%;
+}
+
+.selected {
+    border-style: solid;
+    border-width: 3px;
+}
